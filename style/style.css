@@ -2,11 +2,44 @@ html {
   box-sizing: border-box;
 }
 
+/* Animate the gradient colors */
 body {
-  margin: 0;
-  font-family: "Work Sans", sans-serif;
-  background: linear-gradient(160deg, #E0BBE4 0%, #957DAD 100%);
+  animation: gradientShift 12s ease infinite alternate;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Keyframes for smooth gradient movement */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(160deg, #E0BBE4 0%, #957DAD 100%);
+  }
+  50% {
+    background: linear-gradient(160deg, #F8BBD0 0%, #FFD1DC 100%);
+  }
+  100% {
+    background: linear-gradient(160deg, #FADADD 0%, #FFB7C5 100%);
+  }
+}
+
+/* Floating heart animation */
+.heart {
+  position: absolute;
+  bottom: -40px;
+  width: 30px;
+  height: 30px;
+  background: url('../img/heart.svg') no-repeat center/contain;
+  animation: floatUp 6s infinite ease-in;
+  opacity: 0.8;
+}
+
+/* Keyframes for hearts drifting upward */
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  25% { opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}
+
 
 
 .container {
